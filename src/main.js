@@ -12,7 +12,7 @@ Vue.prototype.$cookie = cookie
 Vue.prototype.$qs = qs
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
-axios.defaults.baseURL = 'http://http://47.104.150.14:8888' // 关键步骤–填写后台请求统一的地址
+axios.defaults.baseURL = 'http://47.104.150.14:8888' // 关键步骤–填写后台请求统一的地址
 
 /* eslint-disable no-new */
 new Vue({
