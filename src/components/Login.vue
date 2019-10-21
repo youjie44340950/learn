@@ -38,6 +38,14 @@
           </p>
           <button class="btn btn-lg btn-primary btn-block" @click="submitForm()" >登录</button>
          </div>
+
+         <ul>
+           <li> <a>社交帐号登录</a></li>
+        <li>
+
+           <a href="https://github.com/login/oauth/authorize?response_type=code&client_id=bfe8662580f52bfcbe6d&scope=read:user&state=6MtY3Nm672Hfv2ohYpT_4D_FNT3J5M9NYLIQt-g3JlQ%3D&redirect_uri=http://47.104.150.14:80/threeLogin">GitHub</a>
+        </li>
+         </ul>
       </div>
     </section>
 

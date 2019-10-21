@@ -6,7 +6,9 @@ import router from './router'
 import axios from 'axios'
 import qs from 'qs'
 import cookie from 'vue-cookie'
+import 'babel-polyfill'
 
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.headers.common['token'] = cookie.get('token')
 Vue.prototype.$cookie = cookie
 Vue.prototype.$qs = qs
@@ -22,6 +24,9 @@ new Vue({
   template: '<App/>'
 })
 router.beforeEach((to, from, next) => {
+  console.log(to)
+  console.log(from)
+  console.log(next)
   if (to.matched.some(record => record.meta.requireLogin)) { // 判断该路由是否需要登录权限
     if (localStorage.getItem('userInfo')) { // 判断当前用户的登录信息loginInfo是否存在
       next()

@@ -6,19 +6,25 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: this.Headers,
   mounted () { // 这个属性就可以，在里面声明初始化时要调用的方法即可
     // we can implement any method here like
     this.change()
   },
   methods: {
     change () {
-
+      if (localStorage.getItem('userInfo')) { // 判断当前用户的登录信息loginInfo是否存在
+        this.userInfo = JSON.parse(localStorage.getItem('userInfo'))
+      } else {
+        this.$router.push({
+          path: `/`
+        })
+      }
     }
   },
   data () {
     return {
-      userInfo: JSON.parse(localStorage.getItem('userInfo'))
+      userInfo: ''
     }
   }
 }
